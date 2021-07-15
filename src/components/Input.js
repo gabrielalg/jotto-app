@@ -1,7 +1,12 @@
 import React from "react";
 
-function Input({ secretWord }) {
+function Input({ success, secretWord }) {
   const [currentGuess, setCurrentGuess] = React.useState("");
+
+  if (success) {
+    return <div data-test="component-input"> </div>;
+  }
+
   return (
     <div data-test="component-input">
       <form className="form-inline">
