@@ -1,15 +1,13 @@
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import { findByTestAttr } from "../test/testUtils";
 import App from "./App";
 
 /**
  * Setup function for App component
- * @returns {Wrapper}
+ * @returns {ShallowWrapper}
  */
 const setup = () => {
-  // use mount, because useEffect not called on `shallow`
-  // https://github.com/airbnb/enzyme/issues/2086
-  return mount(<App />);
+  return shallow(<App />);
 };
 
 test("renders without error", () => {
